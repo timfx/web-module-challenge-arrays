@@ -45,9 +45,12 @@ Use the copy function below to do the following:
     2. Return a copy of the received array  
 */
 
-function copy(/*your code here*/){
-    /*your code here*/
-}    
+function copy(ogFlavors){
+    let copyFlavors = ogFlavors;
+    console.log(ogFlavors);
+    return copyFlavors;
+}   
+
 
 
 
@@ -64,9 +67,18 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(/*your code here*/){
-   /*your code here*/
-}
+function is31Flavors(originalFlavors){
+    var arrayLength = originalFlavors.length;
+    const amountFlavors = 31;
+    var is31Flavors  = false;
+    
+    if (arrayLength === amountFlavors){
+            is31Flavors = true;
+    }
+    
+    return is31Flavors;
+ }    
+ 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
@@ -81,9 +93,12 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
-   /*your code here*/
-}
+function addFlavor(originalFlavors, newFlavor){
+    var updatedFlavors = originalFlavors;
+    updatedFlavors.unshift(newFlavor);
+    console.log(updatedFlavors);
+    return updatedFlavors;
+ }
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -97,8 +112,9 @@ Use the removeLastFlavor function below to do the following:
     For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(/*your code here*/){
-   /*your code here*/
+function removeLastFlavor(originalFlavors){
+   originalFlavors.pop();
+   return originalFlavors;
 }
 
 
@@ -114,8 +130,8 @@ Use the getFlavorByIndex function below to do the following:
     For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(/*your code here*/){
-    /*your code here*/
+function getFlavorByIndex(originalFlavors, position){
+    return originalFlavors[position];
 }
 
 
@@ -134,9 +150,16 @@ Use the removeFlavorByName function below to do the following:
     HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-    /*your code here*/
+function removeFlavorByName(originalFlavors, newFlavor){
+    for (var i = originalFlavors.length-1; i >=0 ; i-- ){
+        if (originalFlavors[i] === newFlavor) {
+            originalFlavors.splice(i, 1);
+            break;
+        }
+        return originalFlavors;
+    }
 }
+
 
 
 
@@ -160,9 +183,16 @@ Use the filterByWord function below to do the following:
     DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/){
-    /*your code here*/
-}
+function filterByWord(originalFlavors, Flavor){
+	let newArray=[];
+	for (var i = originalFlavors.length-1; i >=0 ; i-- ){
+  	if (originalFlavors[i].includes(Flavor)){
+    	let newItem = originalFlavors[i];
+      newArray.push(newItem);
+    }
+  }
+  return newArray;
+  }
 
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
